@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+    
+    {% block content %}
+
+    <div class="p-1 mb-1 bg-secondary text-white text-center"><h1>File Upload</h1></div>
+    <main>
+        <br><br>
+
+    <form method='POST' enctype='multipart/form-data'>
+        {{form.hidden_tag()}}
+        {{form.list()}}
+        {{form.file()}}
+        {{form.submit()}}
+    </form>
+
+    {% if table %}
+    <br><br><br><br><br><br>
+    <div style="display: flex;">
+        <div style="display: flex;">
+            <div>
+                <h3>Table</h3>
+                <img src="{{url_for('static', filename='files/table_img.'+ext)}}" /></div>
+            <div>
+                <h3>Detection using SOTA &emsp;&emsp;</h3>
+                <img src="{{url_for('static', filename='files/author.png')}}" alt="Algorithm was unable to detect"/>
+            </div>
+            <div>
+                <h3>Improved Algorithm</h3>
+                <img src="{{url_for('static', filename='files/self.png')}}" alt="Algorithm was unable to detect"/></div>
+        </div>
+
+    </div >
+    <div>
+        <h3>HTML TABLE</h3>
+        {{ table | safe}}
+        </div>
+    {% endif %}
+</main>
+
+{% endblock %}

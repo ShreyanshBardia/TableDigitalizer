@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+    
+    {% block content %}
+
+    <div >
+    <a href="{{url_for('image_to_html')}}" class="btn btn-primary btn-lg" role="button" >Image to Table</a>
+    
+     <br><br><br><br>
+    <a href="{{url_for('detect_table')}}" class="btn btn-primary btn-lg" role="button" >Detect Tables</a>
+    </div>
+
+    {% endblock  %}
